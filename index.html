@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><link rel="icon" href="data:,"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SERFF ALTR-134867991 – NC Deviation Questionnaire (signed)</title>
+<style>body{margin:0;background:#525659;font-family:Arial,sans-serif}header{position:sticky;top:0;background:#222;color:#fff;padding:8px 12px;font-size:14px;z-index:2}header a{color:#9cf}#pages canvas{display:block;margin:12px auto;max-width:98vw;height:auto;box-shadow:0 2px 8px rgba(0,0,0,.5);background:#fff}</style>
+</head><body>
+<header>SERFF ALTR-134867991 · North Carolina Deviation Questionnaire (FC-038), signed (company certification redacted) · <a href="ALTR-134867991.pdf">Download PDF</a></header>
+<div id="pages"></div>
+<script type="module">
+import * as pdfjsLib from './pdfjs/pdf.min.mjs';
+pdfjsLib.GlobalWorkerOptions.workerSrc='./pdfjs/pdf.worker.min.mjs';
+const pdf=await pdfjsLib.getDocument('ALTR-134867991.pdf').promise;
+const box=document.getElementById('pages');const cs=[];
+for(let i=1;i<=pdf.numPages;i++){const p=await pdf.getPage(i);const v=p.getViewport({scale:2});const c=document.createElement('canvas');c.id='page'+i;c.width=v.width;c.height=v.height;c.style.width=Math.min(v.width/2,window.innerWidth*0.98)+'px';box.appendChild(c);await p.render({canvasContext:c.getContext('2d'),viewport:v}).promise;cs.push(c);}
+const want=parseInt((location.hash.match(/page=?(\d+)/)||[])[1]||pdf.numPages);
+document.getElementById('page'+Math.min(want,pdf.numPages)).scrollIntoView();
+</script>
+<noscript><a href="ALTR-134867991.pdf#page=3">Open the PDF at page 3</a></noscript>
+</body></html>
